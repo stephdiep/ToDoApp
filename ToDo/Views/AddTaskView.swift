@@ -25,6 +25,7 @@ struct AddTaskView: View {
                 .textFieldStyle(.roundedBorder)
 
             Button {
+                // Only adding a task if user added something in the TextField
                 if title != "" {
                     realmManager.addTask(taskTitle: title)
                 }

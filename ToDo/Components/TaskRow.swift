@@ -13,6 +13,7 @@ struct TaskRow: View {
     
     var body: some View {
         HStack(spacing: 20) {
+            // If task is completed, show a checkmark circle, otherwise show an empty circle
             Image(systemName: completed ? "checkmark.circle" : "circle")
             
             Text(task)

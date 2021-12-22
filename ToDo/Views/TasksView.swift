@@ -20,6 +20,7 @@ struct TasksView: View {
             
             List {
                 ForEach(realmManager.tasks, id: \.id) { task in
+                    // Must wrap in an if statement because we don't want to display the task if it has been invalidated (will run into a crash otherwise)
                     if !task.isInvalidated {
                         TaskRow(task: task.title, completed: task.completed)
                             .onTapGesture {
